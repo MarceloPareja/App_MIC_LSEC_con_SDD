@@ -1,7 +1,7 @@
 {
   "proyecto": "MIC_LSEC_SDD",
-  "descripcion": "Sistema TraductorLSEC con arquitectura cliente-servidor MVC para traduccion de Lengua de Senas Ecuatoriana (LSEC) mediante inferencia en la nube.",
-  "dominio": "accesibilidad",
+  "descripcion": "Framework de desarrollo guiado por especificaciones y métricas",
+  "dominio": "Ingeniería de software",
   "tipo_aplicacion": "movil",
   "metodologia": "SDD",
   "herramienta_sdd": "GitHub Spec Kit 1.2.0",
