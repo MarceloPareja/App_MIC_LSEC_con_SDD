@@ -1,0 +1,9 @@
+package com.traductorLSEC.model
+
+import java.util.UUID
+
+data class ChatMessage(
+    val id: String = UUID.randomUUID().toString(),
+    val text: String,
+    val timestamp: Long = System.currentTimeMillis()
+)
