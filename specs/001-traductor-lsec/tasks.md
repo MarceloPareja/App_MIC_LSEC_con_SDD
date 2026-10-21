@@ -23,7 +23,7 @@
 
 - [ ] T001 Create Android project structure per implementation plan in `app/` (build.gradle, manifest, source dirs)
 - [ ] T002 Configure Android permissions in `app/src/main/AndroidManifest.xml` (CAMERA, RECORD_AUDIO, INTERNET, ACCESS_NETWORK_STATE)
-- [ ] T003 [P] Setup build dependencies in `app/build.gradle` (CameraX/Camera2, OkHttp/WebSocket, TextToSpeech)
+- [ ] T003 [P] Setup build dependencies in `../../app/build.gradle.kts` (CameraX/Camera2, OkHttp/WebSocket, TextToSpeech)
 
 ---
 
