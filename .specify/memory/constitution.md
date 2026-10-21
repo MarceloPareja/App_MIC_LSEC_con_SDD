@@ -42,6 +42,20 @@ Allowed types: `feat`, `fix`, `docs`, `style`, `refactor`, `test`, `chore`. Desc
 - **Scale factors:** The project scale factors MUST be qualified in the row `000-proyecto` of `metricas/factores-cocomo.csv`.
 - **Effort multipliers:** Effort multipliers MUST be qualified at the end of each `/speckit-plan`.
 
+## System Context
+
+### TraductorLSEC Mobile App
+
+- **Purpose:** Enable a person who does not know Ecuadorian Sign Language (LSEC) to understand a deaf person who does, by sending sign videos captured by the mobile device.
+- **Video input:** Videos of signs with a maximum duration of 10 minutes, streamed in constant packets to avoid unnecessary device storage consumption.
+- **Camera:** The app requires full camera access for capture.
+- **Processing:** Videos are processed by an external deep learning model deployed in the cloud. Each request MUST include the clip duration and a unique ID. The model returns real-time sign translations as text.
+- **Chat/history:** Translations are shown in a WhatsApp-style chat with history of up to the last 30 translations.
+- **TTS:** A text-to-speech component on the mobile client generates audio from the translations, with the required audio permissions.
+- **UX:** The app must be highly intuitive and easy to use; error handling is key to avoid user confusion or misunderstandings.
+- **Connectivity:** The app must work under low connectivity conditions.
+- **Authentication:** No login is required; no data is stored in the cloud, only the remote model is used for processing.
+
 ## Additional Constraints
 
 ### Branching and Review
@@ -58,7 +72,15 @@ Allowed types: `feat`, `fix`, `docs`, `style`, `refactor`, `test`, `chore`. Desc
 - **Plan completion gate:** Before finalizing a `/speckit-plan`, COCOMO effort multipliers MUST be recorded as required by Principle III.
 - **Metrics maintenance:** `metricas/factores-cocomo.csv` MUST remain up to date with the current project state.
 
-## Governance
+## Architecture
+
+### Server and Client Integration
+
+- **Server deployment:** The server is deployed to connect with the mobile client, sending JSON packets to it in order to obtain the translation.
+- **MVC structure:** The server code MUST follow an MVC folder structure.
+- **TDD:** Development MUST follow Test Driven Development across all phases before any commit.
+- **Connection config:** Connection is configured through a `.env` file shipped alongside the compiled build; the endpoint MUST NOT be exposed in source code.
+- **Language:** All code MUST be written in Spanish.
 
 ### Amendment Procedure
 
@@ -73,9 +95,9 @@ Amendments to this Constitution require:
 - **MINOR:** New principle/section added or materially expanded guidance.
 - **PATCH:** Clarifications, wording, typo fixes, non-semantic refinements.
 
-**Current Version:** 1.0.0  
+**Current Version:** 1.2.0  
 **Ratified:** 2026-10-20  
-**Last Amended:** 2026-10-20
+**Last Amended:** 2026-10-21
 
 ### Compliance Review
 
