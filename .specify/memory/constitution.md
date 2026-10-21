@@ -1,50 +1,45 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+<!-- Sync Impact Report:
+- Version change: template -> 1.0.0
+- Modified principles: Initialized 5 core principles for TraductorLSEC (Test-First & Usability, Documentación Integral, Arquitectura MVC & Cloud Deep Learning, Modelado UML, Idioma Español)
+- Added sections: Architecture & Stack constraints, Development Workflow & Quality Gates, Governance
+- Removed sections: None (scaffold placeholders replaced)
+- Follow-up TODOs: None
+-->
+
+# TraductorLSEC Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### I. Test-First & Testing Rigor (NON-NEGOTIABLE)
+Las pruebas deben definirse estrictamente antes de la implementación del código (TDD). Se pondrá especial énfasis en pruebas de usabilidad y rendimiento. Tras cada funcionalidad agregada, se deben ejecutar pruebas de regresión para garantizar la estabilidad y correcta compilación del sistema.
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### II. Documentación Integral
+Todo el código fuente, APIs, módulos y componentes desarrollados deben estar completamente documentados, especificando su propósito, entradas, salidas y contratos de interfaz.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### III. Arquitectura Cliente-Servidor (MVC)
+El sistema adopta una arquitectura cliente-servidor estructurada bajo el patrón Modelo-Vista-Controlador (MVC), donde la aplicación móvil actúa como cliente y consume servicios e inferencias de un modelo de deep learning alojado en la nube.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### IV. Modelado UML
+Todo diseño de componentes, flujos e interacciones del sistema debe estar respaldado y acompañado por diagramas UML formales (casos de uso, secuencia, clases, etc.) previo o durante la especificación técnica.
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### V. Idioma y Localización en Español
+Todo el código fuente, comentarios, documentación técnica y artefactos de especificación deben estar escritos estrictamente en español.
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+## Restricciones Arquitectónicas y Tecnológicas
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
+La aplicación móvil está orientada a la accesibilidad, usabilidad e interacción fluida en tiempo real con modelos de deep learning en la nube. Se priorizará la separación de responsabilidades mediante MVC y la robustez en la comunicación cliente-servidor.
 
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
+## Flujo de Desarrollo y Puertas de Calidad
 
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+1. **Especificación y Planificación:** Toda nueva funcionalidad requiere especificación formal mediante Spec Kit.
+2. **Pruebas Primeras:** Red-Green-Refactor estricto con enfoque en rendimiento, usabilidad y pruebas automatizadas.
+3. **Validación de Regresión:** Verificación de compilación y ejecución de pruebas de regresión ante cada cambio o incorporación de funcionalidad.
+4. **Validación UML y Documentación:** Actualización de diagramas UML y documentación antes de dar por completada cualquier tarea o funcionalidad.
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+- La Constitución supersede cualquier otra práctica de desarrollo en el repositorio.
+- Las enmiendas requieren documentación, justificación y aprobación explícita mediante incremento de versión (SemVer).
+- Las revisiones de cumplimiento se realizan en cada ciclo de validación de tareas y revisión de código.
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+**Version**: 1.0.0 | **Ratified**: 2026-10-21 | **Last Amended**: 2026-10-21
