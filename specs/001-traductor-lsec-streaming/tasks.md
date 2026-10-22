@@ -18,9 +18,9 @@
 
 **Purpose**: Project initialization and basic Android native structure
 
-- [ ] T001 Create project structure (`android/app/src/main/java/com/lsec/traductor/{model,view,controller}`) per implementation plan
-- [ ] T002 Initialize Android project with Gradle, Kotlin 1.9+, and dependencies (CameraX, Room, Retrofit, TTS) in `android/build.gradle` and `android/app/build.gradle`
-- [ ] T003 [P] Configure linting and formatting rules for Android Kotlin in `android/config/lint.xml`
+- [x] T001 Create project structure (`android/app/src/main/java/com/lsec/traductor/{model,view,controller}`) per implementation plan
+- [x] T002 Initialize Android project with Gradle, Kotlin 1.9+, and dependencies (CameraX, Room, Retrofit, TTS) in `android/build.gradle` and `android/app/build.gradle`
+- [x] T003 [P] Configure linting and formatting rules for Android Kotlin in `android/config/lint.xml`
 
 ---
 
@@ -30,10 +30,10 @@
 
 **⚠️ CRITICAL**: No user story work can begin until this phase is complete
 
-- [ ] T004 Setup Room Database schema and configuration in `android/app/src/main/java/com/lsec/traductor/model/TraductorDatabase.kt`
-- [ ] T005 [P] Setup Retrofit client and network configuration for cloud API communication in `android/app/src/main/java/com/lsec/traductor/controller/ApiClient.kt`
-- [ ] T006 [P] Configure error handling and network status monitoring infrastructure in `android/app/src/main/java/com/lsec/traductor/controller/NetworkMonitor.kt`
-- [ ] T007 Create base Application class and dependency wiring in `android/app/src/main/java/com/lsec/traductor/TraductorApplication.kt`
+- [x] T004 Setup Room Database schema and configuration in `android/app/src/main/java/com/lsec/traductor/model/TraductorDatabase.kt`
+- [x] T005 [P] Setup Retrofit client and network configuration for cloud API communication in `android/app/src/main/java/com/lsec/traductor/controller/ApiClient.kt`
+- [x] T006 [P] Configure error handling and network status monitoring infrastructure in `android/app/src/main/java/com/lsec/traductor/controller/NetworkMonitor.kt`
+- [x] T007 Create base Application class and dependency wiring in `android/app/src/main/java/com/lsec/traductor/TraductorApplication.kt`
 
 **Checkpoint**: Foundation ready - user story implementation can now begin in parallel
 
@@ -47,13 +47,13 @@
 
 ### Implementation for User Story 1
 
-- [ ] T008 [P] [US1] Create MensajeTraduccion Room Entity matching table fields (`id`, `idUnicoClip`, `textoTraducido`, `marcaTemporal`, `estadoAudio`) with max 30 records FIFO policy in `android/app/src/main/java/com/lsec/traductor/model/MensajeTraduccion.kt`
-- [ ] T009 [P] [US1] Create MensajeDao interface for chat history queries and FIFO purge in `android/app/src/main/java/com/lsec/traductor/model/MensajeDao.kt`
-- [ ] T010 [US1] Implement CameraX video capture and chunk streaming controller in `android/app/src/main/java/com/lsec/traductor/controller/StreamingController.kt` (depends on T005)
-- [ ] T011 [US1] Implement Cloud Translation Service interacting with TFLite backend (`id_unico`, `duracion_clip_ms`, `video_chunk`) in `android/app/src/main/java/com/lsec/traductor/controller/TranslationService.kt` (depends on T005)
-- [ ] T012 [US1] Implement Text-to-Speech (TTS) manager in `android/app/src/main/java/com/lsec/traductor/controller/TtsManager.kt`
-- [ ] T013 [US1] Implement Chat ViewModel managing message history and real-time UI updates in `android/app/src/main/java/com/lsec/traductor/controller/ChatViewModel.kt` (depends on T008, T009, T011)
-- [ ] T014 [US1] Implement WhatsApp-like Chat UI and Camera Preview Activity/Fragment in `android/app/src/main/java/com/lsec/traductor/view/MainActivity.kt` and layout XMLs (depends on T010, T013)
+- [x] T008 [P] [US1] Create MensajeTraduccion Room Entity matching table fields (`id`, `idUnicoClip`, `textoTraducido`, `marcaTemporal`, `estadoAudio`) with max 30 records FIFO policy in `android/app/src/main/java/com/lsec/traductor/model/MensajeTraduccion.kt`
+- [x] T009 [P] [US1] Create MensajeDao interface for chat history queries and FIFO purge in `android/app/src/main/java/com/lsec/traductor/model/MensajeDao.kt`
+- [x] T010 [US1] Implement CameraX video capture and chunk streaming controller in `android/app/src/main/java/com/lsec/traductor/controller/StreamingController.kt` (depends on T005)
+- [x] T011 [US1] Implement Cloud Translation Service interacting with TFLite backend (`id_unico`, `duracion_clip_ms`, `video_chunk`) in `android/app/src/main/java/com/lsec/traductor/controller/TranslationService.kt` (depends on T005)
+- [x] T012 [US1] Implement Text-to-Speech (TTS) manager in `android/app/src/main/java/com/lsec/traductor/controller/TtsManager.kt`
+- [x] T013 [US1] Implement Chat ViewModel managing message history and real-time UI updates in `android/app/src/main/java/com/lsec/traductor/controller/ChatViewModel.kt` (depends on T008, T009, T011)
+- [x] T014 [US1] Implement WhatsApp-like Chat UI and Camera Preview Activity/Fragment in `android/app/src/main/java/com/lsec/traductor/view/MainActivity.kt` and layout XMLs (depends on T010, T013)
 
 **Checkpoint**: At this point, User Story 1 should be fully functional and testable independently (MVP ready)
 
@@ -67,9 +67,9 @@
 
 ### Implementation for User Story 2
 
-- [ ] T015 [P] [US2] Implement retry interceptor and connection state observer in `android/app/src/main/java/com/lsec/traductor/controller/NetworkRetryInterceptor.kt`
-- [ ] T016 [US2] Implement user-friendly error notification handler and UI feedback dialogs in `android/app/src/main/java/com/lsec/traductor/view/ErrorDialogHelper.kt`
-- [ ] T017 [US2] Integrate network state observation with StreamingController and ChatViewModel in `android/app/src/main/java/com/lsec/traductor/controller/StreamingController.kt` (depends on T010, T015, T016)
+- [x] T015 [P] [US2] Implement retry interceptor and connection state observer in `android/app/src/main/java/com/lsec/traductor/controller/NetworkRetryInterceptor.kt`
+- [x] T016 [US2] Implement user-friendly error notification handler and UI feedback dialogs in `android/app/src/main/java/com/lsec/traductor/view/ErrorDialogHelper.kt`
+- [x] T017 [US2] Integrate network state observation with StreamingController and ChatViewModel in `android/app/src/main/java/com/lsec/traductor/controller/StreamingController.kt` (depends on T010, T015, T016)
 
 **Checkpoint**: At this point, User Stories 1 AND 2 should both work independently with robust error handling
 
@@ -79,10 +79,10 @@
 
 **Purpose**: Documentation, UML diagrams, validation, and optimization across all stories
 
-- [ ] T018 [P] Add comprehensive documentation and comments in Spanish across all classes in `android/app/src/main/java/com/lsec/traductor/`
-- [ ] T019 [P] Create UML class and sequence diagrams documentation in `docs/uml/`
-- [ ] T020 Run quickstart.md validation scenarios on Android device/emulator
-- [ ] T021 Code cleanup and performance optimization for memory footprint (<100MB)
+- [x] T018 [P] Add comprehensive documentation and comments in Spanish across all classes in `android/app/src/main/java/com/lsec/traductor/`
+- [x] T019 [P] Create UML class and sequence diagrams documentation in `docs/uml/`
+- [x] T020 Run quickstart.md validation scenarios on Android device/emulator
+- [x] T021 Code cleanup and performance optimization for memory footprint (<100MB)
 
 ---
 

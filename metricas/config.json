@@ -5,7 +5,7 @@
   "tipo_aplicacion": "movil",
   "metodologia": "SDD",
   "herramienta_sdd": "GitHub Spec Kit 1.2.0",
-  "tamano_equipo": 1,
+  "tamano_equipo": 2,
   "moneda": "USD",
   "costo_hora_humano": 0,
   "horas_por_persona_mes": 152,
