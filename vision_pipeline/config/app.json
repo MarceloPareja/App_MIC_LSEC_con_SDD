@@ -1,0 +1,68 @@
+{
+  "source": {
+    "type": "file",
+    "path": "input.mp4",
+    "target_fps": null,
+    "max_frames": null
+  },
+  "crop": {
+    "mode": "center",
+    "rect": null,
+    "aspect": "1:1",
+    "output_size": [640, 640],
+    "letterbox": true
+  },
+  "mask": {
+    "provider": "selfie_segmenter",
+    "model_path": "models/selfie_segmenter.tflite",
+    "auto_download": true,
+    "every_n": 2,
+    "smoothing": 0.5,
+    "feather": 7,
+    "ellipse": [0.5, 0.5, 0.35, 0.45],
+    "expand": 0.15
+  },
+  "landmarks": {
+    "enabled": true,
+    "model": "pose",
+    "analysis_size": [256, 256],
+    "smoothing": 0.5,
+    "model_path": "models/pose_landmarker_lite.task",
+    "auto_download": true
+  },
+  "skeleton": {
+    "enabled": true,
+    "path": "config/skeleton/pose_default.json"
+  },
+  "filters": [
+    {
+      "name": "gaussian",
+      "enabled": true,
+      "target": "background",
+      "sigma": 10.0,
+      "radius": null,
+      "backend": "tensorflow"
+    }
+  ],
+  "output": {
+    "video": "out/processed.mp4",
+    "jsonl": "out/frames.jsonl",
+    "metrics": "out/metrics.json",
+    "frames": "keyframes",
+    "frame_dir": "out/frames",
+    "every_n": 30,
+    "frame_format": "jpg",
+    "jpeg_quality": 90,
+    "fps": null,
+    "fourcc": "mp4v",
+    "description": ""
+  },
+  "runtime": {
+    "queue_size": 4,
+    "drop_policy": "oldest",
+    "tf_device": "auto",
+    "warmup_frames": 30,
+    "min_fps": 15.0,
+    "show": false
+  }
+}
