@@ -13,4 +13,4 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "TraductorLSEC"
-include ':app'
+include(":app")
