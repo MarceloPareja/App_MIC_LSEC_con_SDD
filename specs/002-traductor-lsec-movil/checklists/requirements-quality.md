@@ -8,29 +8,29 @@
 
 ## Requirement Completeness
 
-- [ ] CHK001 Are all functional requirements (FR-001..FR-010) documented with measurable criteria? [Completeness]
-- [ ] CHK002 Are camera and audio permission requirements specified? [Completeness, Spec §FR]
-- [ ] CHK003 Is the streaming packet format defined? [Gap]
+- [x] CHK001 Are all functional requirements (FR-001..FR-010) documented with measurable criteria? [Completeness]
+- [x] CHK002 Are camera and audio permission requirements specified? [Completeness, Spec §FR]
+- [x] CHK003 Is the streaming packet format defined? [Gap]
 
 ## Requirement Clarity
 
-- [ ] CHK004 Is "tiempo real" quantified with latency thresholds? [Clarity, Spec §SC-001]
-- [ ] CHK005 Is "baja conexión" defined with measurable bandwidth? [Clarity, Spec §FR-008]
+- [x] CHK004 Is "tiempo real" quantified with latency thresholds? [Clarity, Spec §SC-001]
+- [x] CHK005 Is "baja conexión" defined with measurable bandwidth? [Clarity, Spec §FR-008]
 
 ## Scenario Coverage
 
-- [ ] CHK006 Are error message scenarios defined for all failure modes? [Coverage, Edge Cases]
-- [ ] CHK007 Are permission-denial scenarios specified? [Coverage, Edge Cases]
+- [x] CHK006 Are error message scenarios defined for all failure modes? [Coverage, Edge Cases]
+- [x] CHK007 Are permission-denial scenarios specified? [Coverage, Edge Cases]
 
 ## Non-Functional Requirements
 
-- [ ] CHK008 Are performance targets defined for 10-min continuous recording? [Completeness, Spec §SC]
-- [ ] CHK009 Is TTS behavior under low connectivity specified? [Clarity, Edge Cases]
+- [x] CHK008 Are performance targets defined for 10-min continuous recording? [Completeness, Spec §SC]
+- [x] CHK009 Is TTS behavior under low connectivity specified? [Clarity, Edge Cases]
 
 ## Dependencies & Assumptions
 
-- [ ] CHK010 Is the assumption of remote model availability documented? [Assumption, Spec §Assumptions]
-- [ ] CHK011 Are .env configuration requirements specified? [Dependency, Gap]
+- [x] CHK010 Is the assumption of remote model availability documented? [Assumption, Spec §Assumptions]
+- [x] CHK011 Are .env configuration requirements specified? [Dependency, Gap]
 
 ## Notes
 
