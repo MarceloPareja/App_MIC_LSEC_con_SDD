@@ -1,0 +1,22 @@
+# Entornos y caché
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+dist/
+build/
+*.egg-info/
+
+# Modelos descargados (MediaPipe)
+models/*.task
+models/*.tflite
+
+# Salidas del pipeline
+out/
+benchmarks/out/
+*.mp4
+*.jsonl
+!config/**/*.json
