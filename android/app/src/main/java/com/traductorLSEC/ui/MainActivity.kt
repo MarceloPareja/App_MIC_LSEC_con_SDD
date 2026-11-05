@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() {
         statusText = findViewById(R.id.statusText)
 
         streamClient = StreamClient()
-        cameraStreamer = CameraStreamer(this, this, streamClient)
+        cameraStreamer = CameraStreamer(this, this, streamClient, previewView)
         connectivityMonitor = ConnectivityMonitor(this)
 
         setupConnectivityMonitor()

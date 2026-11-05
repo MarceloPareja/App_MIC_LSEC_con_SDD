@@ -5,7 +5,9 @@ import android.util.Log
 import androidx.camera.core.CameraSelector
 import androidx.camera.core.ImageAnalysis
 import androidx.camera.core.ImageProxy
+import androidx.camera.core.Preview
 import androidx.camera.lifecycle.ProcessCameraProvider
+import androidx.camera.view.PreviewView
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.LifecycleOwner
 import com.traductorLSEC.network.StreamClient
@@ -15,11 +17,17 @@ import java.nio.ByteBuffer
 class CameraStreamer(
     private val context: Context,
     private val lifecycleOwner: LifecycleOwner,
-    private val streamClient: StreamClient
+    private val streamClient: StreamClient,
+    private val previewView: PreviewView
 ) : ImageAnalysis.Analyzer {
     private var session: StreamSession? = null
     private var isStreaming = false
     private val maxDurationSeconds = 600L // 10 minutes
+
+    init {
+        // Start camera preview immediately so user sees live video feed on app start
+        startCamera()
+    }
 
     fun startStreaming() {
         if (isStreaming) return
@@ -39,6 +47,11 @@ class CameraStreamer(
         cameraProviderFuture.addListener({
             val cameraProvider = cameraProviderFuture.get()
             val cameraSelector = CameraSelector.DEFAULT_BACK_CAMERA
+
+            val preview = Preview.Builder().build().also {
+                it.setSurfaceProvider(previewView.surfaceProvider)
+            }
+
             val imageAnalysis = ImageAnalysis.Builder()
                 .setBackpressureStrategy(ImageAnalysis.STRATEGY_KEEP_ONLY_LATEST)
                 .build()
@@ -46,7 +59,12 @@ class CameraStreamer(
 
             try {
                 cameraProvider.unbindAll()
-                cameraProvider.bindToLifecycle(lifecycleOwner, cameraSelector, imageAnalysis)
+                cameraProvider.bindToLifecycle(
+                    lifecycleOwner,
+                    cameraSelector,
+                    preview,
+                    imageAnalysis
+                )
             } catch (exc: Exception) {
                 Log.e("CameraStreamer", "Use case binding failed", exc)
             }
