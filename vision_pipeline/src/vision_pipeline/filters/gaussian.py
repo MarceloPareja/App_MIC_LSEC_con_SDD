@@ -98,7 +98,9 @@ class GaussianFilter(VideoFilter):
 
         self._blur_fn = tf.function(
             blur,
-            input_signature=[tf.TensorSpec(shape=[None, None, 3], dtype=tf.float32)],
+            input_signature=[
+                tf.TensorSpec(shape=[None, None, None, 3], dtype=tf.float32)
+            ],
         )
         self._effective_backend = "tensorflow"
 
@@ -109,8 +111,11 @@ class GaussianFilter(VideoFilter):
         if device == "auto":
             device = "/GPU:0" if tf.config.list_physical_devices("GPU") else "/CPU:0"
         with tf.device(device):
-            tensor = tf.convert_to_tensor(frame, dtype=tf.float32)
+            tensor = tf.expand_dims(
+                tf.convert_to_tensor(frame, dtype=tf.float32), axis=0
+            )
             blurred = self._blur_fn(tensor)
+            blurred = tf.squeeze(blurred, axis=0)
             blurred = tf.clip_by_value(blurred, 0.0, 255.0)
             return blurred.numpy().astype(np.uint8)
 
